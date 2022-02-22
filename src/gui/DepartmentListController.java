@@ -47,7 +47,7 @@ public class DepartmentListController implements Initializable {
 	@FXML
 	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
-		creeteDialogForm("/gui/DepartmentForm.fxml",parentStage);
+		creeteDialogForm("/gui/DepartmentForm.fxml", parentStage);
 	}
 
 	public void setDepartmentService(DepartmentService service) {
@@ -80,7 +80,7 @@ public class DepartmentListController implements Initializable {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
-			
+
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Enter Department");
 			dialogStage.setScene(new Scene(pane));
@@ -88,10 +88,9 @@ public class DepartmentListController implements Initializable {
 			dialogStage.initOwner(parentStage);
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.showAndWait();
-			
+
+		} catch (IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
-		catch (IOException e) {
-			Alerts.showAlert("IO Exception", "Error loading view",e.getMessage(),AlertType.ERROR);
-		}
-  }
+	}
 }
