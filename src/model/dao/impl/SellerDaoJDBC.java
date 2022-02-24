@@ -35,7 +35,7 @@ public class SellerDaoJDBC implements SellerDao {
 					+ "(?, ?, ?, ?, ?)",
 					Statement.RETURN_GENERATED_KEYS);
 			
-			st.setString(1, obj.getNeme());
+			st.setString(1, obj.getName());
 			st.setString(2, obj.getEmail());
 			st.setDate(3, new java.sql.Date(obj.getBitchDate().getTime()));
 			st.setDouble(4, obj.getBaseSalary());
@@ -72,7 +72,7 @@ public class SellerDaoJDBC implements SellerDao {
 					+" WHERE Id = ? ",
 					Statement.RETURN_GENERATED_KEYS);
 			
-			st.setString(1, obj.getNeme());
+			st.setString(1, obj.getName());
 			st.setString(2, obj.getEmail());
 			st.setDate(3, new java.sql.Date(obj.getBitchDate().getTime()));
 			st.setDouble(4, obj.getBaseSalary());
@@ -138,7 +138,7 @@ public class SellerDaoJDBC implements SellerDao {
 	private Seller instantiateSeller(ResultSet rs, Department dep) throws SQLException {
 		Seller obj = new Seller();
 		obj.setId(rs.getInt("id"));
-		obj.setNeme(rs.getString("name"));
+		obj.setName(rs.getString("name"));
 		obj.setEmail(rs.getString("Email"));
 		obj.setBaseSalary(rs.getDouble("BaseSalary"));
 		obj.setBitchDate(rs.getDate("birthDate"));

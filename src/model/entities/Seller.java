@@ -9,7 +9,7 @@ public class Seller implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	private String neme;
+	private String name;
 	private String email;
 	private Date bitchDate;
 	private Double baseSalary;
@@ -19,9 +19,9 @@ public class Seller implements Serializable{
 	public Seller() {
 	}
 
-	public Seller(Integer id, String neme, String email, Date bitchDate, Double baseSalary, Department department) {
+	public Seller(Integer id, String name, String email, Date bitchDate, Double baseSalary, Department department) {
 		this.id = id;
-		this.neme = neme;
+		this.name = name;
 		this.email = email;
 		this.bitchDate = bitchDate;
 		this.baseSalary = baseSalary;
@@ -36,12 +36,12 @@ public class Seller implements Serializable{
 		this.id = id;
 	}
 
-	public String getNeme() {
-		return neme;
+	public String getName() {
+		return name;
 	}
 
-	public void setNeme(String neme) {
-		this.neme = neme;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -76,6 +76,10 @@ public class Seller implements Serializable{
 		this.department = department;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -95,7 +99,7 @@ public class Seller implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Seller [id=" + id + ", neme=" + neme + ", email=" + email + ", bitchDate=" + bitchDate + ", baseSalary="
+		return "Seller [id=" + id + ", name= " + name + ", email=" + email + ", bitchDate=" + bitchDate + ", baseSalary="
 				+ baseSalary + ", department=" + department + "]";
 	}
 }
